@@ -51,6 +51,6 @@ app.post('/signup', (req, res) => {
 app.post('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db, bcrypt)})
 
 
-app.listen('3000', () => {
-  console.log(`app's server is live on port 3000`)
+app.listen(process.env.PORT, () => {
+  console.log(`app's server is live on port ${process.env.PORT}`)
 })  //start server
