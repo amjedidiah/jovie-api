@@ -27,7 +27,7 @@ const handleRegister = (req, res, db, bcrypt) => {
           res.json(user[0])
         })
         .catch(err => {
-          res.status(400).json('try again')
+          res.status(400).json('An error occured<br />Try again')
         }, trx.rollback)
     })
     .then(trx.commit)
