@@ -4,6 +4,10 @@ const handleProfileGet = (req, res, db, bcrypt) => {
 
   if(password === '') {
     return res.status(400).json('Enter your password to edit your details')
+  } else if(email === '') {
+    return res.status(400).json('Email field cannot be left empty')
+  } else if(name === '') {
+    return res.status(400).json('Name field cannot be left empty')
   } else {
     let hash = bcrypt.hashSync(password)
 
