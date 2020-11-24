@@ -1,6 +1,8 @@
 const handleProfileGet = (req, res, db, bcrypt) => {
-  const {name, email, phoneNumber, gender, birthday, password} = req.body
+  const {name, email, phone_number, gender, birthday, password} = req.body
   const {id} = req.params
+
+  console.log(req.body);
 
   if(password === '') {
     return res.status(400).json('Enter your password to edit your details')
@@ -26,7 +28,7 @@ const handleProfileGet = (req, res, db, bcrypt) => {
           .update({
             name,
             email,
-            phoneNumber,
+            phone_number,
             gender,
             birthday
           })
